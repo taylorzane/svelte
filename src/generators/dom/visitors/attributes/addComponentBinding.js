@@ -56,7 +56,7 @@ export default function createBinding ( generator, node, attribute, current, loc
 	` );
 
 	local.update.addBlock( deindent`
-		if ( !${updating} && ${dependencies.map( dependency => `'${dependency}' in changed` ).join( '||' )} ) {
+		if ( !${updating} && ( changed && ${dependencies.map( dependency => `'${dependency}' in changed` ).join( '||' )} ) ) {
 			${updating} = true;
 			${local.name}._set({ ${attribute.name}: ${snippet} });
 			${updating} = false;
