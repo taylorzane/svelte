@@ -270,7 +270,7 @@ export function create_bidirectional_transition(node: Element & ElementCSSInline
 		if (!b) {
 			// @ts-ignore todo: improve typings
 			program.group = outros;
-			outros && outros.r += 1;
+			if (outros) outros.r += 1;
 		}
 
 		if (running_program) {
