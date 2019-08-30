@@ -313,7 +313,7 @@ export function create_bidirectional_transition(node: Element & ElementCSSInline
 								clear_animation();
 							} else {
 								// outro — needs to be coordinated
-								if (!--running_program.group.r) run_all(running_program.group.c);
+								if (running_program.group) if (!--running_program.group.r) run_all(running_program.group.c);
 							}
 						}
 
